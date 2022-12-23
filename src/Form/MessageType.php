@@ -3,9 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Message;
-use Doctrine\DBAL\Types\BooleanType;
-use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
@@ -19,12 +18,49 @@ class MessageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Name', TextType::class)
-            ->add('phoneNumber', TelType::class)
-            ->add('email', EmailType::class)
-            ->add('subject', ChoiceType::class)
-            ->add('message', TextareaType::class)
-            ->add('isClient', ChoiceType::class)
+            ->add('name', TextType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => array(
+                    'placeholder' => 'Votre nom'
+                )
+            ])
+            ->add('phoneNumber', TelType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => array(
+                    'placeholder' => 'Téléphone'
+                )
+            ])
+            ->add('email', EmailType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => array(
+                    'placeholder' => 'Email'
+                )
+            ])
+            ->add('subject', ChoiceType::class, [
+                'choices' => [
+                    'Choix 1' => 'Choix 1',
+                    'Choix 2' => 'Choix 2'
+                ],
+                'required' => true,
+                'label' => false,
+                'attr' => array(
+                    'placeholder' => 'Sujet'
+                )
+            ])
+            ->add('message', TextareaType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => array(
+                    'placeholder' => 'Message'
+                )
+            ])
+            ->add('isClient', CheckboxType::class, [
+                'label' => 'Déjà client',
+                'required' => false
+            ])
         ;
     }
 

@@ -1,0 +1,47 @@
+.formulaire {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.line {
+    padding: 1em;
+    display: flex;
+    flex: 1;
+}
+
+.form-check {
+    display: flex;
+    margin-right: 1em;
+}
+
+.form-check-input {
+    height: 86%;
+    width: 3em;
+}
+
+.form-check .form-check-input {
+    margin-left: -0.5em;
+    margin-right: 0.5em;
+}
+
+#message_phoneNumber {
+    margin-right: 1em;
+}
+
+form {
+    justify-content: center;
+    align-content: center;
+}
+
+.btn-submit {
+    background-color: #bf0d0d;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 9em;
+}
