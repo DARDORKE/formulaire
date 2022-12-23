@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FormController!{% endblock %}
+
+{% block body %}
+        {{ form_start(form) }}
+                {{ form_label(form.Name) }}
+                {{ form_widget(form.Name) }}
+
+                {{ form_label(form.phoneNumber) }}
+                {{ form_widget(form.phoneNumer) }}
+
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+
+                {{ form_label(form.subject) }}
+                {{ form_widget(form.subject) }}
+
+                {{ form_label(form.message) }}
+                {{ form_widget(form.message) }}
+
+                {{ form_label(form.isClient) }}
+                {{ form_widget(form.isClient) }}
+                <button type="submit">Envoyer</button>
+        {{ form_end(form) }}
+{% endblock %}
